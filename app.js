@@ -38,7 +38,9 @@ function localStr() {
                         }
                     }
 
-            
+                    if (flag) {
+                        alert("This email is already registered")
+                    }
                 } 
                 else{
                     alert("pass check")
