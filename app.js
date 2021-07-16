@@ -40,7 +40,13 @@ function localStr() {
 
                     if (flag) {
                         alert("This email is already registered")
-                    }
+                    } else {
+                        allUsers.push(user)
+                        localStorage.setItem("allUsers", JSON.stringify(allUsers))
+                        alert('Your account has been created');
+                        window.location.href = "login.html"
+                        console.log(allUsers[0].email)
+                 }
                 } 
                 else{
                     alert("pass check")
