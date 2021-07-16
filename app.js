@@ -1,3 +1,13 @@
+
+let allUsers;
+let savedUsers = localStorage.getItem("allUsers")
+if (savedUsers) {
+    allUsers = JSON.parse(savedUsers)
+} else {
+    allUsers = []
+}
+
+
 function localStr() {
     var name = document.getElementById("inputName")
     var number = document.getElementById("inputNumber")
@@ -9,47 +19,42 @@ function localStr() {
     var numc = /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/;
     var passc = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
+    let user = {
+        name: name.value,
+        number: number.value,
+        email: email.value,
+        password: password.value
+    }
     if (userc.test(name.value)) {
         if (numc.test(number.value)) {
             if (emailc.test(email.value)) {
                 if (passc.test(password.value)) {
-
-                    var userDetail = {
-                        name: name.value,
-                        number: number.value,
-                        email: email.value,
-                        password: password.value
-                    }
-                    localStorage.setItem('userDetail', JSON.stringify(userDetail))
-
-                   if (true) {
-                    location.href ="login.html"; 
-                   }
-                }
+    
+                } 
                 else{
                     alert("pass check")
                 }
-               
-
             }
             else {
                 alert('check email')
             }
-
         }
         else {
             alert('check number')
         }
-
-
     }
-
-
     else {
         alert(' username check')
 
     }
-   
 }
+
+
+
+
+
+
+
+
 
 
