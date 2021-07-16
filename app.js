@@ -29,7 +29,16 @@ function localStr() {
         if (numc.test(number.value)) {
             if (emailc.test(email.value)) {
                 if (passc.test(password.value)) {
-    
+                    var flag= false;
+                   
+                    for (i = 0; i < allUsers.length; i++) {
+                        if (allUsers[i].email === email.value) {
+                            flag = true
+        
+                        }
+                    }
+
+            
                 } 
                 else{
                     alert("pass check")
