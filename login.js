@@ -15,5 +15,12 @@ if(usersData){
 }
 else{
     alert("no Data found")
+}
 
+    if (flag) {
+        alert('You are logged in.');
+        window.location.href = "home.html"
+    } else {
+        alert("Please Create an account or check your email again")
+    }
 }
